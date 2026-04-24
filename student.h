@@ -8,4 +8,8 @@ typedef struct
     char name[NAME_LEN];
     int id;
     float grade;
-}Student;
+}student;
+
+
+
+#endif
