@@ -22,3 +22,30 @@ int inputint(const char *prompt)
     printf("Invalid Input! Try Again.\n");
     
 }
+
+float inputfloat(const *prompt)
+{
+    int value;
+    printf("%s",prompt);
+if (scanf("%d",value)==1)
+    {
+      clearbuffer();
+      return value;   
+    }
+    clearbuffer();
+    printf("Invalid Input! Try Again.\n");
+}
+
+char inputstring(const *prompt, char *data ,size_t size)
+{
+    printf("%s",prompt);
+
+    if(fgests(data,size,stdin))
+{
+
+    data [strcspn(data,"\n")]='\0';
+}
+    
+}
+
+
