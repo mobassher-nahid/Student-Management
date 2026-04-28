@@ -18,7 +18,7 @@ student *allocatestudent(int n)
 void inputstudents(student *students, int n)
 {
     for (int i = 0; i < n; i++)
-    {   printf("student - %d",i+1);
+    {   printf("student - %d\n",i+1);
         inputstring("Enter Students Name : ", students[i].name, NAME_LEN);
         students[i].id=inputint("Enter ID :");
         students[i].grade=inputfloat("Enter Grade : ");
@@ -39,7 +39,7 @@ void savestudenttxt(const char *filename, student *students, int n)
 
     for(int i=0;i<n;i++)
     {
-        fprintf(fp,"Name : %s\n ID : %d\n    Grade : %.2f\n",
+        fprintf(fp,"Name : %s\n ID : %d\nGrade : %.2f\n",
             students[i].name,
             students[i].id,
             students[i].grade);
