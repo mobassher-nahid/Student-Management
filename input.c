@@ -6,12 +6,13 @@
 void clearbuffer(void)
 {
     int c;
-    while (c=getchar()!='\n'&& c!=EOF);  
+    while ((c=getchar())!='\n'&& c!=EOF);  
 }
 
 int inputint(const char *prompt)
 {
-    int value;
+    while(1)
+   {int value;
     printf("%s",prompt);
     if (scanf("%d",&value)==1)
     {
@@ -20,14 +21,16 @@ int inputint(const char *prompt)
     }
     clearbuffer();
     printf("Invalid Input! Try Again.\n");
+} 
     
 }
 
-float inputfloat(const *prompt)
+float inputfloat(const char *prompt)
 {
-    int value;
+    while(1)
+    {float value;
     printf("%s",prompt);
-if (scanf("%f",value)==1)
+if (scanf("%f",&value)==1)
     {
       clearbuffer();
       return value;   
@@ -35,8 +38,10 @@ if (scanf("%f",value)==1)
     clearbuffer();
     printf("Invalid Input! Try Again.\n");
 }
+    
+}
 
-char inputstring(const *prompt, char *data ,size_t size)
+void inputstring(const char *prompt, char *data ,size_t size)
 {
     printf("%s",prompt);
 
@@ -45,7 +50,7 @@ char inputstring(const *prompt, char *data ,size_t size)
 
     data [strcspn(data,"\n")]='\0';
 }
-    
+    return;     
 }
 
 
