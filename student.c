@@ -14,13 +14,36 @@ student *allocatestudent(int n)
     }
     return students;
 }
+int isduplicate(student *students ,int count ,int id)
+{
+    for (int i=0;i<count;i++)
+    {
+        if(students[i].id==id)
+        {
+            return 1;
+        }
+    }
+    return 0;
+}
 
 void inputstudents(student *students, int n)
 {
     for (int i = 0; i < n; i++)
     {   printf("student - %d\n",i+1);
         inputstring("Enter Students Name : ", students[i].name, NAME_LEN);
-        students[i].id=inputint("Enter ID :");
+       
+       while(1)
+        {
+            students[i].id=inputint("Enter ID :");
+            if(isduplicate(students , i ,students[i].id))
+            {
+                printf("ID -%d already exist! Try again.\n",students[i].id);
+            }
+            else 
+            
+            {break;}
+ }  
+
         students[i].grade=inputfloat("Enter Grade : ");
     }
 }
@@ -46,4 +69,13 @@ void savestudenttxt(const char *filename, student *students, int n)
     }
     fclose(fp);
 
+}
+
+void clearscreen(void)
+{
+#ifdef _WIN32
+    system("cls");
+#else
+    system("clear");
+#endif
 }

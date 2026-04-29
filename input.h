@@ -9,7 +9,3 @@ float inputfloat(const char* prompt);
 void inputstring(const char* prompt,char *data,size_t size);
 
 #endif
-
-
-
-

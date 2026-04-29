@@ -11,6 +11,8 @@ int main()
 
     do
     {
+        clearscreen();
+        
         printf("========STUDENT MANAGEMENT======\n");
         printf("1.Enter students\n");
         printf("2.Save student data\n");
