@@ -33,3 +33,33 @@ Grade : 4.00
 Name : alfaz ahmed
  ID : 102
 Grade : 3.44
+
+...............................................
+             Student Details                     
+
+...............................................
+Name : Mobassher Nahid
+ ID : 101
+Grade : 4.00
+Name : Hasibul Hasan
+ ID : 102
+Grade : 3.89
+Name : Rafi Ahmed
+ ID : 103
+Grade : 3.56
+
+...............................................
+             Student Details                     
+
+...............................................
+Name : Sakib albin
+ ID : 101
+Grade : 3.00
+
+...............................................
+             Student Details                     
+
+...............................................
+Name : Sakib albin
+ ID : 101
+Grade : 3.00

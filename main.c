@@ -12,11 +12,12 @@ int main()
     do
     {
         clearscreen();
-        
+
         printf("========STUDENT MANAGEMENT======\n");
         printf("1.Enter students\n");
         printf("2.Save student data\n");
-        printf("3.Exit\n");
+        printf("3.Show Students Data\n");
+        printf("4.Exit\n");
         choice = inputint("Enter....");
 
         switch (choice)
@@ -38,17 +39,16 @@ int main()
             }
 
             students = allocatestudent(n);
-            {
-                if (!students)
-                {
-                    printf("Memory allocation failed!");
-                    n = 0;
-                    break;
-                }
 
-                inputstudents(students, n);
+            if (!students)
+            {
+                printf("Memory allocation failed!");
+                n = 0;
                 break;
             }
+
+            inputstudents(students, n);           
+            break;
 
         case 2:
             if (!students || n == 0)
@@ -59,24 +59,40 @@ int main()
 
             savestudenttxt("student.txt", students, n);
             printf("Saved data successfully\n");
+            printf("\nPress Enter to return to menu...");
+            getchar();
+            
             break;
             
-            
-case 3:
-                printf("Exiting program. Goodbye!\n");
+
+        case 3:
+            if(!students||n==0)
+            {
+                printf("No students data to show....");
                 break;
+            }
+            displaydata(students,n);
+            printf("\nPress Enter to return to menu...");
+            getchar();
+            break;
+            
+        
+        case 4:
+
+            printf("Exit...");
+            break;
+       
 
         default:
             printf("Invalid choice! Try again.\n");
         }
 
-    }
-    while (choice != 3);
-    {
+    } while (choice != 4);
+    
         if (students)
         {
             free(students);
         }
-    }
+    
     return 0;
 }
